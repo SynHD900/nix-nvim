@@ -7,17 +7,24 @@
   };
 
   outputs = {
+    self,
     nixpkgs,
     nvf,
     ...
   }: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    customNeovim = nvf.lib.neovimConfiguration {
-      inherit pkgs;
-      modules = [./nvf-configuration.nix];
-    };
+    systems = ["x86_64-linux" "aarch64-darwin"];
+    forEachSystem = f: nixpkgs.lib.genAttrs systems (system: f system);
   in {
-    packages.${system}.default = customNeovim.neovim;
+    packages = forEachSystem (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+        customNeovim = nvf.lib.neovimConfiguration {
+          inherit pkgs;
+          modules = [./nvf-configuration.nix];
+        };
+      in {
+        default = customNeovim.neovim;
+      }
+    );
   };
 }

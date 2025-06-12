@@ -78,7 +78,7 @@
       lua.enable = true;
       zig.enable = false;
       python.enable = true;
-      typst.enable = false;
+      typst.enable = true;
       rust = {
         enable = false;
         crates.enable = false;
@@ -137,7 +137,7 @@
       enable = true;
       name = "catppuccin";
       style = "mocha";
-      transparent = true;
+      transparent = false;
     };
 
     autopairs.nvim-autopairs.enable = true;
