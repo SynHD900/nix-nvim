@@ -91,6 +91,7 @@
         enable = false;
         crates.enable = false;
       };
+      yaml.enable = true;
 
       # Language modules that are not as common.
       assembly.enable = false;
