@@ -86,7 +86,11 @@
       lua.enable = true;
       zig.enable = false;
       python.enable = true;
-      typst.enable = true;
+      typst = {
+        enable = true;
+        format.type = "typstyle";
+      };
+      # typst.enable = true;
       rust = {
         enable = false;
         crates.enable = false;
@@ -139,8 +143,9 @@
       lualine = {
         enable = true;
         # theme = "catppuccin";
-        #theme = "dracula";
+        # theme = "dracula";
         theme = "tokyonight";
+        # theme = "onedark";
       };
     };
 
@@ -150,6 +155,8 @@
       # style = "mocha";
       name = "tokyonight";
       style = "night";
+      # name = "onedark";
+      # style = "darker";
       transparent = false;
     };
 
