@@ -137,18 +137,18 @@
     statusline = {
       lualine = {
         enable = true;
-        # theme = "catppuccin";
+        theme = "catppuccin";
         #theme = "dracula";
-        theme = "tokyonight";
+        # theme = "tokyonight";
       };
     };
 
     theme = {
       enable = true;
-      #name = "catppuccin";
-      # style = "mocha";
-      name = "tokyonight";
-      style = "night";
+      name = "catppuccin";
+      style = "mocha";
+      # name = "tokyonight";
+      # style = "night";
       transparent = false;
     };
 
