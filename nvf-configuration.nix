@@ -31,6 +31,11 @@
       }
     ];
 
+    clipboard = {
+      enable = true;
+      registers = "unnamedplus";
+    };
+
     spellcheck = {
       enable = true;
     };
