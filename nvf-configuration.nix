@@ -5,6 +5,9 @@
     # an overview of nvf's module options. To find a complete and curated list of nvf module
     # options, examples, instruction tutorials and more; please visit the online manual.
     # https://notashelf.github.io/nvf/options.html
+
+    # relative numbers =>
+    lineNumberMode = "number";
     viAlias = true;
     vimAlias = true;
     debugMode = {
@@ -36,13 +39,13 @@
       # This must be enabled for the language modules to hook into
       # the LSP API.
       enable = true;
-
+      inlayHints.enable = true;
       formatOnSave = true;
       lspkind.enable = false;
       lightbulb.enable = true;
       lspsaga.enable = false;
       trouble.enable = true;
-      lspSignature.enable = true; # conflicts with blink in maximal
+      lspSignature.enable = false; # conflicts with blink in maximal
       otter-nvim.enable = false;
       nvim-docs-view.enable = true;
     };
@@ -117,7 +120,7 @@
       nvim-web-devicons.enable = true;
       nvim-cursorline.enable = true;
       cinnamon-nvim.enable = true;
-      fidget-nvim.enable = true;
+      fidget-nvim.enable = false;
 
       highlight-undo.enable = true;
       indent-blankline.enable = true;
@@ -129,14 +132,18 @@
     statusline = {
       lualine = {
         enable = true;
-        theme = "catppuccin";
+        # theme = "catppuccin";
+        #theme = "dracula";
+        theme = "tokyonight";
       };
     };
 
     theme = {
       enable = true;
-      name = "catppuccin";
-      style = "mocha";
+      #name = "catppuccin";
+      # style = "mocha";
+      name = "tokyonight";
+      style = "night";
       transparent = false;
     };
 
@@ -147,8 +154,8 @@
     # enable blink-cmp in maximal because it needs to build its rust fuzzy
     # matcher library.
     autocomplete = {
-      nvim-cmp.enable = true;
-      blink-cmp.enable = false;
+      nvim-cmp.enable = false;
+      blink-cmp.enable = true;
     };
 
     snippets.luasnip.enable = true;
@@ -190,7 +197,7 @@
     };
 
     notify = {
-      nvim-notify.enable = true;
+      nvim-notify.enable = false;
     };
 
     projects = {
