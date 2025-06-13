@@ -46,9 +46,9 @@
       enable = true;
       inlayHints.enable = true;
       formatOnSave = true;
-      lspkind.enable = false;
+      lspkind.enable = true;
       lightbulb.enable = true;
-      lspsaga.enable = false;
+      lspsaga.enable = true;
       trouble.enable = true;
       lspSignature.enable = false; # conflicts with blink in maximal
       otter-nvim.enable = false;
@@ -167,8 +167,12 @@
     # enable blink-cmp in maximal because it needs to build its rust fuzzy
     # matcher library.
     autocomplete = {
-      nvim-cmp.enable = false;
-      blink-cmp.enable = true;
+      # nvim-cmp.enable = false;
+      blink-cmp = {
+        enable = true;
+        friendly-snippets.enable = true;
+        sourcePlugins.emoji.enable = true;
+      };
     };
 
     snippets.luasnip.enable = true;
