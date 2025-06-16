@@ -38,6 +38,10 @@
 
     spellcheck = {
       enable = true;
+      languages = [
+        "en"
+        "de"
+      ];
     };
 
     lsp = {
