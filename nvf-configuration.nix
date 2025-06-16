@@ -230,6 +230,7 @@
       surround.enable = false;
       leetcode-nvim.enable = false;
       multicursors.enable = false;
+      preview.markdownPreview.enable = true;
 
       motion = {
         hop.enable = true;
