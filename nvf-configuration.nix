@@ -9,7 +9,7 @@
     # relative numbers =>
     lineNumberMode = "number";
     viAlias = true;
-    vimAlias = true;
+    vimAlias = false;
     debugMode = {
       enable = false;
       level = 16;
