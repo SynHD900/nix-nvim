@@ -7,7 +7,7 @@
     # https://notashelf.github.io/nvf/options.html
 
     # relative numbers =>
-    lineNumberMode = "number";
+    lineNumberMode = "relNumber";
     viAlias = true;
     vimAlias = false;
     debugMode = {
