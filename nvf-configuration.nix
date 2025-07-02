@@ -29,6 +29,13 @@
         silent = true;
         action = ":Neotree toggle<CR>";
       }
+      {
+        key = "<leader>p";
+        mode = "x";
+        silent = true;
+        action = "\"_dP";
+        desc = "Paste without loss";
+      }
     ];
 
     clipboard = {
