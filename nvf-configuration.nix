@@ -96,7 +96,10 @@
       go.enable = true;
       lua.enable = true;
       zig.enable = false;
-      python.enable = true;
+      python = {
+        enable = true;
+        lsp.server = "pyright";
+      };
       typst = {
         enable = true;
         format.type = "typstyle";
