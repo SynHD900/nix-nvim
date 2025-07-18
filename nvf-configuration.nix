@@ -84,7 +84,9 @@
       nix.enable = true;
       markdown.enable = true;
 
-      # Languages that are enabled in the maximal configuration.
+      terraform = {
+        enable = true;
+      };
       bash.enable = true;
       clang.enable = false;
       css.enable = false;
