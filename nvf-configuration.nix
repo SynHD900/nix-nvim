@@ -1,4 +1,10 @@
 {
+  imports = [
+    ./keymaps.nix
+    ./lsp.nix
+    ./theme.nix
+    ./visuals.nix
+  ];
   vim = {
     # This is the sample configuration for nvf, aiming to give you a feel of the default options
     # while certain plugins are enabled. While it may partially act as one, this is *not* quite
@@ -15,167 +21,12 @@
       level = 16;
       logFile = "/tmp/nvim.log";
     };
-
-    keymaps = [
-      {
-        key = "<leader>e";
-        mode = "n";
-        silent = true;
-        action = ":Neotree<CR>";
-      }
-      {
-        key = "<C-n>";
-        mode = "n";
-        silent = true;
-        action = ":Neotree toggle<CR>";
-      }
-      {
-        key = "<leader>p";
-        mode = "x";
-        silent = true;
-        action = "\"_dP";
-        desc = "Paste without loss";
-      }
-    ];
-
-    clipboard = {
+    dashboard.alpha = {
       enable = true;
-      registers = "unnamedplus";
+      theme = "theta";
     };
 
-    spellcheck = {
-      enable = true;
-      languages = [
-        "en"
-        "de"
-      ];
-    };
-
-    lsp = {
-      # This must be enabled for the language modules to hook into
-      # the LSP API.
-      enable = true;
-      inlayHints.enable = true;
-      formatOnSave = true;
-      lspkind.enable = true;
-      lightbulb.enable = true;
-      lspsaga.enable = true;
-      trouble.enable = true;
-      lspSignature.enable = false; # conflicts with blink in maximal
-      otter-nvim.enable = false;
-      nvim-docs-view.enable = true;
-    };
-
-    debugger = {
-      nvim-dap = {
-        enable = true;
-        ui.enable = true;
-      };
-    };
-
-    # This section does not include a comprehensive list of available language modules.
-    # To list all available language module options, please visit the nvf manual.
-    languages = {
-      enableFormat = true; #
-      enableTreesitter = true;
-      enableExtraDiagnostics = true;
-
-      # Languages that will be supported in default and maximal configurations.
-      nix.enable = true;
-      markdown.enable = true;
-
-      terraform = {
-        enable = true;
-      };
-      bash.enable = true;
-      clang.enable = false;
-      css.enable = false;
-      html.enable = false;
-      sql.enable = false;
-      java.enable = false;
-      kotlin.enable = false;
-      ts.enable = false;
-      go.enable = true;
-      lua.enable = true;
-      zig.enable = false;
-      python = {
-        enable = true;
-        lsp.server = "pyright";
-      };
-      typst = {
-        enable = true;
-        format.type = "typstyle";
-      };
-      # typst.enable = true;
-      rust = {
-        enable = false;
-        crates.enable = false;
-      };
-      yaml.enable = true;
-
-      # Language modules that are not as common.
-      assembly.enable = false;
-      astro.enable = false;
-      nu.enable = false;
-      csharp.enable = false;
-      julia.enable = false;
-      vala.enable = false;
-      scala.enable = false;
-      r.enable = false;
-      gleam.enable = false;
-      dart.enable = false;
-      ocaml.enable = false;
-      elixir.enable = false;
-      haskell.enable = false;
-      ruby.enable = false;
-      fsharp.enable = false;
-
-      tailwind.enable = false;
-      svelte.enable = false;
-
-      # Nim LSP is broken on Darwin and therefore
-      # should be disabled by default. Users may still enable
-      # `vim.languages.vim` to enable it, this does not restrict
-      # that.
-      # See: <https://github.com/PMunch/nimlsp/issues/178#issue-2128106096>
-      nim.enable = false;
-    };
-
-    visuals = {
-      nvim-scrollbar.enable = true;
-      nvim-web-devicons.enable = true;
-      nvim-cursorline.enable = true;
-      cinnamon-nvim.enable = true;
-      fidget-nvim.enable = false;
-
-      highlight-undo.enable = true;
-      indent-blankline.enable = true;
-
-      # Fun
-      cellular-automaton.enable = false;
-    };
-
-    statusline = {
-      lualine = {
-        enable = true;
-        # theme = "catppuccin";
-        # theme = "dracula";
-        theme = "tokyonight";
-        # theme = "onedark";
-      };
-    };
-
-    theme = {
-      enable = true;
-      # name = "catppuccin";
-      # style = "mocha";
-      name = "tokyonight";
-      style = "night";
-      # name = "onedark";
-      # style = "darker";
-      transparent = false;
-    };
-
+    # autobrackets
     autopairs.nvim-autopairs.enable = true;
 
     # nvf provides various autocomplete options. The tried and tested nvim-cmp
@@ -199,16 +50,16 @@
       };
     };
 
-    tabline = {
-      nvimBufferline.enable = true;
-    };
+    # tabline = {
+    #   nvimBufferline.enable = true;
+    # };
 
     treesitter.context.enable = true;
 
     binds = {
       whichKey.enable = true;
       cheatsheet.enable = true;
-      hardtime-nvim.enable = true;
+      # hardtime-nvim.enable = true;
     };
 
     telescope.enable = true;
@@ -219,40 +70,15 @@
       gitsigns.codeActions.enable = false; # throws an annoying debug message
     };
 
-    minimap = {
-      minimap-vim.enable = false;
-      codewindow.enable = true; # lighter, faster, and uses lua for configuration
-    };
-
-    dashboard = {
-      dashboard-nvim.enable = false;
-      alpha.enable = true;
-    };
-
-    notify = {
-      nvim-notify.enable = false;
-    };
-
-    projects = {
-      project-nvim.enable = false;
-    };
-
     utility = {
-      ccc.enable = false;
-      vim-wakatime.enable = false;
       diffview-nvim.enable = true;
-      yanky-nvim.enable = false;
-      icon-picker.enable = false;
-      surround.enable = false;
-      leetcode-nvim.enable = false;
-      multicursors.enable = false;
       preview.markdownPreview.enable = true;
 
-      motion = {
-        hop.enable = true;
-        leap.enable = true;
-        precognition.enable = false;
-      };
+      # motion = {
+      #   hop.enable = true;
+      #   leap.enable = true;
+      #   precognition.enable = false;
+      # };
       images = {
         image-nvim.enable = false;
         img-clip.enable = false;
@@ -264,7 +90,7 @@
       neorg.enable = false;
       orgmode.enable = false;
       mind-nvim.enable = false;
-      todo-comments.enable = true;
+      todo-comments.enable = false;
     };
 
     terminal = {
@@ -276,14 +102,12 @@
 
     ui = {
       borders.enable = true;
+      # command bar
       noice.enable = true;
+
       colorizer.enable = true;
       modes-nvim.enable = false; # the theme looks terrible with catppuccin
       illuminate.enable = true;
-      breadcrumbs = {
-        enable = false;
-        navbuddy.enable = false;
-      };
       smartcolumn = {
         enable = true;
         setupOpts.custom_colorcolumn = {
@@ -297,30 +121,8 @@
       fastaction.enable = true;
     };
 
-    assistant = {
-      chatgpt.enable = false;
-      copilot = {
-        enable = false;
-        cmp.enable = false;
-      };
-      codecompanion-nvim.enable = false;
-      avante-nvim.enable = false;
-    };
-
-    session = {
-      nvim-session-manager.enable = false;
-    };
-
-    gestures = {
-      gesture-nvim.enable = false;
-    };
-
     comments = {
       comment-nvim.enable = true;
-    };
-
-    presence = {
-      neocord.enable = false;
     };
   };
 }
