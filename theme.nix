@@ -6,12 +6,15 @@
         # theme = "catppuccin";
         # theme = "dracula";
         # theme = "tokyonight";
-        theme = "onedark";
+        # theme = "onedark";
+        theme = "gruvbox";
       };
     };
 
     theme = {
       enable = true;
+      name = "gruvbox";
+      style = "dark";
       # style = "hard";
       # style = "dark";
       # style = "dark_dimmed";
@@ -19,8 +22,8 @@
       # style = "mocha";
       # name = "tokyonight";
       # style = "night";
-      name = "onedark";
-      style = "darker";
+      # name = "onedark";
+      # style = "darker";
       transparent = false;
     };
   };
